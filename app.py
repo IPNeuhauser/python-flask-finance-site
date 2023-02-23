@@ -265,3 +265,7 @@ def errorhandler(e):
 # Listen for errors
 for code in default_exceptions:
     app.errorhandler(code)(errorhandler)
+
+
+if __name__ == '__app__':
+    app.run(debug=True, port=os.getenv("PORT", default=5000))
