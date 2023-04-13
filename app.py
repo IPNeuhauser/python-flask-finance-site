@@ -267,5 +267,5 @@ for code in default_exceptions:
     app.errorhandler(code)(errorhandler)
 
 
-if __name__ == '__app__':
+if __name__ == '__main__':
     app.run(debug=True, port=os.getenv("PORT", default=5000))

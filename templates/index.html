@@ -1,29 +1,29 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    index
+    início
 {% endblock %}
 
 {% block message %}
     {% if session['message'] == 'buy' %}
         <div class="message">
-            Compra foi um sucesso.
+            Compra realizada com sucesso.
         </div>
     {% elif session['message'] == 'sold' %}
         <div class="message">
-            Venda foi um sucesso
+            Venda realizada com sucesso.
         </div>
     {% elif session['message'] == 'register' %}
         <div class="message">
-            Registrado com sucesso
+            Cadastro realizado com sucesso.
         </div>
     {% elif session['message'] == 'password' %}
         <div class="message">
-            Senha alterada com sucesso
+            Senha alterada com sucesso.
         </div>
     {% elif session['message'] == 'login' %}
         <div class="message">
-            Login efetuado com sucesso
+            Login efetuado com sucesso.
         </div>
     {% else %}
         <div class="message"></div>
@@ -35,11 +35,11 @@
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>
-                <th scope="col">Symbol</th>
-                <th scope="col">Name</th>
-                <th scope="col">Shares</th>
-                <th scope="col">Price</th>
-                <th scope="col">Total</th>
+                <th scope="col">Sigla</th>
+                <th scope="col">Empresa</th>
+                <th scope="col">Quantidade</th>
+                <th scope="col">Valor unitário</th>
+                <th scope="col">Valor total</th>
             </thead>
             <tbody>
                 {% for dado in dados %}
@@ -55,7 +55,7 @@
                 {% endfor %}
             </tbody>
             <tfoot>
-                <th scope="colgroup" colspan="4"></th>
+                <th scope="colgroup" colspan="4" style="text-align: right;">Saldo:</th>
                 <td><strong>$ {{ cash }}</strong></td>
             </tfoot>
         </table>

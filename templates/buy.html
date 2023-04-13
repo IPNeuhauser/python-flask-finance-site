@@ -1,17 +1,20 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    buy
+    Compra
 {% endblock %}
 
 {% block main %}
+    <article>
+        <p>Compra de ações americanas.</p>
+    </article>
     <form action="/buy" method="post">
         <div>
-            <input autocomplete="off" autofocus class="form-control" type="text" name="symbol" placeholder="Symbol" required>
+            <input autocomplete="off" autofocus class="form-control" type="text" name="symbol" placeholder="Sigla da ação" required>
         </div>
         <br>
         <div>
-            <input autocomplete="off" class="form-control" type="number" name="shares" placeholder="Shares" min="1" required>
+            <input autocomplete="off" class="form-control" type="number" name="shares" placeholder="Quantidade" min="1" required>
         </div>
         <br>
         <button class="form-control" type="submit">Buy</button>
